@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 삼항조건 연산자식을 이용해 변수에 저장된 값이 홀짝을 판별하기
+
+        let num = 1; let result; // 현재 undefiend
+        /*
+        삼항조건연산자식 작성 방법
+            조건식 ? 조건식의 결과가 참이면 실행될 코드 : 조건식의 결과가 거짓이면 실행될 코드;
+        */
+        // null변수 메모리에 저장된 값이 짝수이면 result변수에 '짝수'문자열 작성
+        //                            홀수이면 result변수에 '홀수' 문자열 작성
+
+        result = num % 2 === 0 ? "짝수" : "홀수";
+        //        조건식        ?  true  : false
+        console.log(result); // "홀수";  num변수에 저장된 1은 "홀수"
+
+        num = 10; //num변수에 저장된 가존의 1은 사라지고 10이 새로저장
+        /*
+         num 변수에 저장된 값이 짝수가 아니냐 ? 조건식을 작성하는데
+         콘솔로그 를 이용해 "홀수이다" 바로 출력, 그반대일떄는 "짝수이다" 라고
+         출력되게 삼항조건연산자 식작성 하세여.
+        */
+        result = num % 2 !== 0 ? console.log("홀수이다") : console.log("짝수이다");
+        /*
+                    10   % 2 !== 0
+                           0 !== 0     0이 짝수
+                            false    ?     true   :  fasle                
+        */
+        console.log(result);
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

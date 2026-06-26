@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<script>
+    /*
+    논리 연산자?
+    - 피연산자를 논리적으로 평가한뒤 조건에 맞는 피연산자를 반환하는 연산을 수행하는 연산자
+    - 종류
+      ||   &&  !
+    
+    */
+//  and 연산자 &&는 피연산자를 왼쪽부터 평가해 평가 결과가 거짓이면 
+//  거짓이 나온 피연사자를 즉시 반환하고
+//  거짓이 아니면 마지막에 평가되는 피연산자를 반환합니다.
+    document.write(true && true , "<br>");
+    //왼쪽 -------->
+
+    document.write(true && true && true, "<br>");  
+// 그런데 논리연산자에는 한가지 특징이 있습니다.
+//어떤 피연산자든 모두 논리형으로 평가하는것이죠
+//숫자형을 쓰거나 문자열을 쓰거나 전부 논리값으로 평가합니다.document
+//자바스크립트의 자료형중 ""빈문자열, undefined,0,null만 거짓으로 평가하고 나머지는 참으로 평가합니다.
+
+console.log("" && "cat"); //"" 빈공백 문자열이 출력된다
+//이유: &&연산자는 첫번째 피연산자가  false 거짓이므로 
+//두번쨰 피연산자를 평가하지 않고 첫번째 피연산자 ""를 반환합니다.
+console.log(undefined && "cat");// undefined출력력
+//              false && true
+//              첫번째 피연산자 undefined를 변환해 출력
+console.log( 0 && "cat");  // 0이 출력
+console.log( null && " cat");// null이 출력
+//--------------------------------------------------
+/*
+논리 연산자가 반드시 true false를 반환하는것이라 평가결과에 따라 피연산자를 반환하는 특징이 있습니다.
+
+*/
+console.log( "cat" && "dog"); // "dog"
+/*
+cat은 자바스크립트에서 참으로 평가됩니다
+&&연산자는 첫번째 피연산자가 참이므로 두번쨰 피연산자 dog를 평가합니다 
+dog도 참이므로 두번째 피연산자 dog를 반환합니다.
+*/
+console.log( "cat" && "dog" && "bird"); //"bird"
+// cat,가 참이므로 dog가 반환  dog가 참이므로 bird로 변환
+
+//실무예시
+const islogin = true;//로그인 되었다 판단하믄 참의 값
+islogin && document.write( "<h1>메뉴</h1>");
+
+
+/* or연산자 ||는 피연산자를 왼쪽부터 평가해 참으로 평가된 피연산자르 즉시 반환합니다.
+만약  모든 피연산자가 참으로 평가되지 않으면 마지막에 평가된 피연산자를 변환함*/
+console.log( false||true||false); //true
+console.log(false||false); //false
+console.log( false||"cat"); // "cat"
+console.log("dog"||"cat");// "dog"   첫번쨰 피연산자가 참이므로 두번째 피연산자를 평가하지않고 "dog"만 반환해서 출력
+//  ||연산자는 첫번째 피연산자가 참이면 두번쨰 피연산자를 평가 하지않고 첫번째 피연산자로 반환출력함
+//            첫번째 피연산자가 거짓이면 두번쨰 피연산자를 평가하고 반환출력함
+
+/*
+NOT 연산자 ! 는 피연산자나 식을 평가한 논리값의 반대값 (true -> false), (false -> true)를 변환함
+*/
+
+console.log( !false); //true
+
+// 10이 20보다 크냐 라고 컴퓨터에게 질문하는 조건식
+console.log( !(10<20)); //true
+//            !(true)
+//            false
+console.log( !(10 < 20 && 20 <10));
+//             !(  true && false)
+//              !(     false    )
+//                   true
+
+/* (   )의 유무로 순서차이로 결과값이 달라짐 */
+console.log(! true && false);
+//          false && false -> false
+console.log(! (true && false));
+//              ! (false)
+//                  true
+
+
+
+
+
+</script>
+
+
+    
+</body>
+</html>

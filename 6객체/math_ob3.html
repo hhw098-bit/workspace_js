@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+/*
+
+0.0 ~ 1.0(제외) 랜던 실수값 하나 발생시키려면?
+Math.random(); -> 0.2
+               -> 0.99
+               -> 0.9999
+
+원하는 구간 3 ~ 7 사이의 랜덤수를 정수형태로 하나 발생시키려면?
+        원하는 구간에서 난수(랜덤값)을 정수 하나로 발생하는  식
+          Math.floor( Math.ramdom() * (최댓값 - 최솟값 + 1) ) + 최솟값
+
+          Math.floor( Math.ramdom() * (  7   -   3   + 1) ) +   3
+=====================================================================================
+       3부터 7까지 정수가 총 몇개인지 계산을 위한 계산식
+               최댓값 - 최솟값 + 1
+                 7   -   3   + 1 
+                      4      + 1        따라서 3부터 7까지의 정수의 수는 5개입니다. 
+                               5                 3, 4, 5, 6, 7
+======================================================================================
+        마지막으로 최솟값 3을 왜 더하는가???
+            지금까지 만들어진 정수는 다음 중 하나입니다.
+                0, 1, 2, 3, 4
+            따라서 만들어진 숫자에 최솟값인 3을 더 합니다.
+            0+3 = 3, 
+            1+3 = 4, 
+            2+3 = 5, 
+            3+3 = 6, 
+            4+3 = 7    
+
+
+
+
+
+*/ 
+// 120~150사이의 난수 하나를 정수로 발생
+let min = 120;
+let max = 150;
+//              Math.floor( Math.ramdom() * (최댓값 - 최솟값 + 1) ) + 최솟값
+let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+//              Math.floor( Math.ramdom(0.8) * (150 - 120 + 1) ) + 120
+//              Math.floor( Math.ramdom(0.8) * (    30    + 1) ) + 120
+//              Math.floor( Math.ramdom(0.8) * (           31) ) + 120
+//              Math.floor(                               24.8 ) + 120
+//                                                          24   + 120
+//                                                 랜덤값 : 144  
+document.write(randomNum);
+
+
+
+ </script>   
+</body>
+</html>

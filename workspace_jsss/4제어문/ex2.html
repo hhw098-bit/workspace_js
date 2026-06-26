@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+/*
+문제2 계절 판별기
+사용자에게 월을 입력받아 해당 월의 계절을 출력하는 프로그램을 작성하세요 스위치문사용
+
+3~5 봄 / 6~8 여름 /9~11 가을 /12~2 겨울 / 을 출력하세요
+
+*/
+let message;
+let mon = parseInt(prompt("달을 알려주세요","0"),10);//7을 입력하면 문자열 "7"이므로 숫자열 10진수 7로 바꾸기
+        // ("7")                             ,10진수의 형태  => 7 을 mon변수에 저장
+console.log(mon);
+
+switch (mon) {
+    case 3 : case 4 : case 5 : // mon 변수에 입력한 값이 3또는 4또는 5와 같으냐?
+        message = "봄";
+        break;
+    case 6 : case 7 : case 8 : // mon 변수에 입력한 값이 6또는 7또는 8와 같으냐?
+        message = "여름";
+        break;
+    case 9 : case 10 : case 11 : // mon 변수에 입력한 값이 9또는 10또는 11와 같으냐?
+        message = "가을";
+        break;
+    case 1 : case 2 : case 12 :// mon 변수에 입력한 값이 1또는 2또는 12와 같으냐?
+        message = "겨울";
+        break;
+    default : message = "잘못입력했습니다!! "   ;
+        break;
+
+}
+document.write(message);
+
+ </script>   
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+1. 요소 생성       → createElement
+2. (선택) 속성/텍스트 미리 설정 가능
+3. DOM 트리에 연결 → appendChild
+4. 자식 노드 추가  → appendChild
+5. 속성 연결       → setAttribute / setAttributeNode

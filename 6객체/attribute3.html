@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!--
+    (4) 메소드로 속성 조작
+─────────────────────────────
+메소드                                    설명
+─────────────────────────────
+노드.getAttribute("속성명");               해당 속성의 값을 반환
+노드.setAttribute("속성명", 값);           해당 속성 값 변경/추가
+노드.removeAttribute("속성명");            해당 속성 삭제
+
+
+-->
+
+
+<a href="#" class="fz20">link   </a>
+
+
+<script>
+
+// 1 위 a요소노드 선택해서 class="fz20" 한쌍 삭제
+// removeAttribute메소드 사용
+const aEl = document.querySelector("a");
+// aEl.removeAttribute("class");
+// 결과 -> <a href="#" >link   </a>
+
+
+
+// 2 1에서 선택한 a요소노드 /  href="#"힌쌍중에서 "#"값만 삭제   /   class="fz20"  한쌍 중에서  "fz20" 값만 삭제하여 class넘김
+// remove 메소드 사용                              
+//                            aEl.remove("#");                         aEl.clasList.remove("fz20");       
+//                        <a class="fz20">link   </a>                                                <a href="#" >link   </a>
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// <a href="#" class="fz20">link   </a>
+
+
+
+
+// 1 a요소노드의 기존 class속성값 "fz20"을 보존하면서 class= "red-color" 추가
+// 그럼 -> <a href="#" class="fz20">link   </a>
+//aEl.classList.add("red-color");
+
+//2 a요소노드의 기존 class속성값 "fz20"을 보존하지 않고 class속성값을 red-color로 변경
+// 그림 -> <a href="#" class="red-color">link   </a>
+aEl.setAttribute("class","red-color");
+
+
+
+
+
+  </script>
+    
+
+
+
+</body>
+</html>

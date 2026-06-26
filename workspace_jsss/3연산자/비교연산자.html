@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let numberA = 2; let numberB = 2; let numberC = "2";
+        // 넘버a,b변수의 저장된 값이 자료종류+값 이 모두 같으냐?
+        document.write(numberA === numberB);
+        //                 2  ===  2
+        //                   true
+
+        document.write("<br>");
+        //넘버b 변수에 저장된 2와 넘버c에 저장된 "2"가 자료종류+값이 모두 값으냐?
+        document.write(numberB === numberC);
+        //              2   ===     '2'              같은 숫자2로 보여도 넘버b는 숫자형이고 
+        //                  false                              넘버c는 문자열형이므로 false
+
+        document.write("<br>");
+
+        //넘버b변수에 저장된 2와 넘버c변수에 저장된 '2'가 자료의 종류는 달라도 숫자값 형태만 같으냐?
+        document.write(numberB == numberC);
+        //              2   ==   '2'
+        //                 true
+        //자료의 형태는 달라도 종류는 같으므로 참으로 출력력
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

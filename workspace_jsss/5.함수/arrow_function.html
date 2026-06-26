@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//화살표 => 함수 정의 후 호출해서 사용하는 예제
+// 문제1 매개변수로 두개의 인수를 전달받아 두개의 인수값을 더한 결과값을 반환하는 
+//기능의 화살표 함수 정의     참고. 상수명은 add
+//const add = (a,b)=> { return a + b; };
+//              ||
+//               V                      
+    const add = (a,b)=>  a + b; 
+
+//문제1.1 위 화살표 함수 호출할때 3,5인수로 전달해서 8을 반환받아 콘솔로그로 출력
+console.log(add(3,5));
+
+//문제2 매개변수로 두개의 인수를 전달받아 두수중 큰값 하나를 반환하는 기능의 화살표 함수 정의
+// 참고. 상수명은 max 단! 코드 기능 구현은 삼항 조건연산자식을 사용하여 첫번째 매개변수로 전달받은값이 
+//                                                      두번째 매개변수로 전달받은 값보다 크면? 
+//                                                      첫번째 매개변수로 전달받은 값을 반환하고, 
+//                                                      그렇지 않으면 두번쨰 매개변수로 전달 받은 값 반환 
+
+            const max = ( a , b  ) => { return a > b  ? a : b;  };
+                    
+             max(  );
+/*   축약버전
+            comst max = (a,b) => a > b ? a : b;
+            max (  );
+*/
+
+//문제2.1 위 화살표 함수 호출할때 매개변수로 인수 7과 10을 각각 순서대로 전달해서 더큰수 인수값을 반환 받어 콘솔로 출력
+console.log(max(7,10));
+
+//문제3 매개변수로 전달 받은 하나의 인수값(숫자값)이 양수인지 확인하는 기능의 화살표 함수정의
+// 참고 상수명 isPositive
+
+            const isPositive = (num) => { //  (num) => num>0;
+       
+                return num > 0;  
+/*                    if (num > 0){
+                        return true
+                    } else {
+                        return false
+                    };                    
+*/                 
+             } 
+             isPositive(  );
+
+//문제3.1위 화살표 함수 호출할때 매개변수로 인수 5를 전달 하면 참, 매개변수로 인수 -2를 전달하면 거짓을 반환받게
+// 각각 콘솔의 로그로 출력.
+console.log(isPositive(5));
+console.log(isPositive(-2));
+
+// 문제4. 숫자1부터 매개변수num으로 전달받은 하나의 인수값까지의 합을 구해서 반환하는 기능의 화살표 함수정의
+// 참고~ 상수명은 sumUpto
+
+            const sumUpto =  num   => {
+            let sum = 0;
+            for(let i=1; i<=num; i++ ){
+             sum += i;            
+            }   
+            return sum; 
+                    
+            };
+                    
+//문제4.1 위 화살표 함수 호출할때 매개변수 num으로 5인수를 전달해서 1+2+3+4+5전체 더한 결과값 15를 반환받아 콘솔출력.
+console.log(sumUpto(5));// 15;
+
+
+
+//문제5 매개변수 num과 const를 선언해서 화살표 함수로 정의하는데.. 
+// const 매개변수로 전달받은 숫자만큼 반복해서 num 변수로 전달 받은 값을 반복해서 콘솔로그 출력
+// 참고! 상수명은 repeatNumber
+
+   const repeatNumber = (num,count) => {
+            
+         for(let i=0; i<count; i++ ){
+
+            console.log(num );// num매개변수로 전달받은 값을 반복해서 콘솔로그로 출력
+         }
+    
+      };
+                    
+     repeatNumber(  );
+
+//문제5.1 위 화살표 함수를 호출할때 num매개변수에는 인수 3을 전달하고 const매개변수에는 인수 5를 전달해서
+// 3을 5번 반복해서 콘솔로그로 출력하라. 
+repeatNumber(3,5);
+
+
+//문제6 매개변수 num으로 하나의 숫자를 인수로 전달받아서 3으로 나눈 나머지 값이 0이면(3의배수이면)참값
+//                                                  3의 배수가 아니면 거짓값 반환하는 기능의 화살표함수
+//참고 상수명은 ismultipleofThree
+const ismultipleofThree = ( num ) => {return  num % 3 === 0;      };
+//                                   return   true; 또는 false;
+//const ismultipleofThree = num  =>          num % 3 === 0   ;
+//문제6.1 위 화살표 함수 호출할때 num매개변수에 9를 전달하면 참을 반환받아 이자리에 콘솔로그 출력
+//                             num매개변수에 10을 전달하면 거짓을 반환받아 콘솔로그 출력
+console.log( ismultipleofThree(9)); // true;
+console.log( ismultipleofThree(10)); // false;
+console.log( "++++++++++++++++++추가문제+++++++++++++++"); 
+
+/*문제7 매개변수로 하나의 문자열을 전달받아 문자열 길이를 반환하는 화살표 함수 정의
+상수명: getLength 👉 함수 호출 시 "hello"를 전달해서 결과를 콘솔 출력 */
+
+const getLength =( ) => {return "hello"};
+console.log(getLength("hello") );
+//A: const getLength = (str) => str.length;
+
+//console.log(getLength("hello"));  5
+
+/*문제8 매개변수로 숫자 하나를 전달받아 짝수이면 "짝수", 홀수이면 "홀수"를 반환하는 화살표 함수 정의
+상수명: checkEvenOdd  함수 호출 시 4, 7 각각 전달해서 콘솔 출력*/
+
+const checkEvenOdd = ( num) =>  num % 2 === 0 ? "짝수" : "홀수" ; //{  }?
+console.log(checkEvenOdd(4));
+console.log(checkEvenOdd(7));
+
+
+/*문제9 매개변수로 숫자 2개를 전달받아 두 수의 평균값을 반환하는 화살표 함수 정의
+상수명: getAverage  함수 호출 시 10, 20 전달해서 콘솔 출력*/
+
+const getAverage = ( a, b) =>  ( a + b )/2;
+
+console.log(getAverage(10,20));
+
+
+
+/*문제10 매개변수로 숫자 하나를 전달받아 그 숫자의 제곱값을 반환하는 화살표 함수 정의
+상수명: square   함수 호출 시 6 전달해서 콘솔 출력*/
+
+const square = (num) => num*num;
+
+console.log(square(6));
+
+
+/*문제11  매개변수로 문자열과 숫자를 전달받아  문자열을 숫자만큼 반복해서 반환하는 화살표 함수 정의
+상수명: repeatString   함수 호출 시 "hi", 3 전달해서 "hihihi" 출력*/
+const repeatString = ( str, num) => str.repeat(num);
+console.log(repeatString("hi",3));
+
+/*
+const repeatString = (str, count) => {
+    let result = "";  // 결과를 담을 변수
+
+    for (let i = 0; i < count; i++) {
+        result += str;  // 문자열 계속 이어붙이기
+    }
+
+    return result;
+};
+
+console.log(repeatString("hi", 3)); // hihihi
+*/
+
+
+
+
+
+</script>    
+</body>
+</html>
