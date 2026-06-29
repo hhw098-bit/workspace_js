@@ -31,22 +31,22 @@
           보이도록 하자.
     */
   	// 자동차 옵션체크 박스 중 하나를 클릭했을때  호출되는 car함수 만들기
-  	function 자동차견적서(){
+  	function car(){
     	 
     	   //1. 차량 기본 구매 금액 13450000 얻어 변수에 저장
-    	   let 깡통가격 = Number( document.getElementById("total").defaultValue);
+    	   let basic_car = Number( document.getElementById("total").defaultValue );
     	  //13450000
     	   //2.<input type="checkbox"> 체크박스  갯수 만큼  3번 반복 하는데..
            //  선택해서 가져온 <input type="checkbox">체크박스 (인조가죽시트)가 체크되어 있다면?
            //  체크한 옵션 금액을 얻어 기본차량 금액에 누적
     	   for(let i=1;   i<=3;   i++){
     		   
-    		     let 옵션가 = document.getElementById("opt"+i); // 옵션 1,2,3
+    		     let chkObj = document.getElementById("opt"+i);
 // <input type="checkbox" name="opt1" id="opt1" value="250000" onclick="car();" />
 
-          if(옵션가.checked){ //체크되어 있다면? 
+          if(chkObj.checked){ //체크되어 있다면? 
             // 클릭하여 체크한 <input type="checkbox" > 의 value="250000"을 반환
-          깡통가격 += Number(옵션가.value); // -> number("250000"); -> 250000
+          basic_car += Number(chkObj.value); // -> Number("250000"); -> 250000
 
           }
 
@@ -57,7 +57,7 @@
     	   //<input type="text" id="total" value="13450000">요소 노드의 
     	   //value속성에 13450000대신 basic_car변수값으로 설정해서 브라우저화면에 체크한 누적금액보여주기
     	  
-         document.getElementById("total").value = 깡통가격;
+         document.getElementById("total").value = basic_car;
          //                                       13450000 + 클릭한 옵션가격
 
 
@@ -70,7 +70,7 @@
     사용자가 입력을 변경하기전의 값을 반환합니다.
 
     value속성은 현재 입력된값을 얻을때 사용하며,
-    사용자가 입력값을 변경하면 이속성에 대한 값도 변경되므로 변경된된 값을 반환함
+    사용자가 입력값을 변경하면 이속성에 대한 값도 변경되므로 변경된 값을 반환함
 
     즉! defaultValue속성은 초기상태를 유지하고,
      value속성은 사용자의 입력에 따라 변하는 현재 상태값을 얻을때 사용함
