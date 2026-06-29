@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+    /*
+        함수선언 방법2
+            1. 함수 선언문
+                function 함수명(매개변수1 매개변수2 ){
+                
+                    실행할 코드;
+
+                    return 반환값;
+                }
+
+            2. 함수 호출
+            
+                함수명(전달값1, 전달값2);
+            
+            3. 핵심
+              -함수 선언은 실행할 코드를 준비하는 단계이다.
+              -함수 호출은 준비된 코드를 실행하는 단계이다.
+              -매개변수는 함수가 값(인수)을 받기 위해 선언한 변수이다.
+              -인수는 함수를 호출할 때 전달하는 실제 값이다.
+              -return 은함수 코드 실행 결과값을 함수를 호출한 줄의 자리로 되돌(반환)려주는 예약어입니다.    
+
+*/
+    // 문제1 두 수를 더해서 반환하는 add 함수 선언
+    function add(a,b){
+            //a와 b는 각각 매개변수라고 부른다.
+
+            // return은 a + b의 계산결과를 함수를 호출한 줄의 자리로 되돌려주는 예약어
+            return a + b;
+
+            // add 함수 호출
+            add();
+
+    }
+    let 합 = add(900,111);
+    console.log(합);
+    document.write(합);
+
+    // 문제 2 매개변수로 두개의 인수를 전달받아 두값 중에서 큰값 하나를 반환하는  max함수정의
+
+    function max ( a, b ){
+        if (a>b){
+            return a; //더 큰값 하나 반환
+        } else { 
+            return b; //더 큰값 하나 반환
+        }
+
+    }
+
+    // max함수 호출할떄 인수로 7과 10을 전달해 큰값 10을 반환 받아 콘솔로그로 출력
+    max (7,10);
+    console.log(max (7,10));
+    
+
+    // 문제3 매개변수로 한개의 숫자를 전달 받아 함수이면 ture반환, 음수이면 false를 
+    //반환하는 기능의 inPositive 함수 정의
+    function inPositive (num){
+        if (num > 0){//양수값
+            return true;
+
+        } else {// 음수값
+            return false;
+
+        }
+
+    }
+    // inPositive함수 호출할떄 인수5를 매개변수로 전달해서 참반환 받고 콘솔로그 출력
+  
+        console.log(inPositive(5)); // true
+
+    //inPositive함수 호출할때 인수-2를 매개벼누로 전달해서 false반환 받고 콘솔로그 출력력
+
+        console.log(inPositive(-2));// false
+
+ //문제4 매개변수로 한개의 숫자를 전달받아 전달받은 숫자가 짝수이면 참값, 홀수이면 거짓값 반환하는 isEven함수 정의
+function isEven(num){
+    return num % 2 === 0;
+
+}
+
+// isEven함수를 호출할때 인수 4를 전달해서 참값 반환받아 콘솔로그 출력
+console.log(isEven (4));
+
+// isEven함수를 호출할때 인수 7를 전달해서 거짓값 반환받아 콘솔로그 출력
+
+console.log(isEven (7));
+
+
+// 문제5 숫자 1부터 매개변수n으로 전달받은 인수 하나의 합을 구하는 기능의 sumUpto함수 정의
+/// 기능 : 숫자 1부터 매개변수n으로 부터 전달 받은 인수까지의 합을 계산해서 반환합니다.
+
+function sumUpto( n ){
+    
+    // 숫자 1부터 n매개변수로 전달받은 값을 1씩 증가시키면서 누적해서 저장할 누적변수 sum반환
+        let sum = 0;
+    // 숫자 1부터 n매개변수로 전달 받은 숫자 까지 반복해서 sum변수에  i 변수값 누적    
+        for(i=1; i<=n; i++  ) {
+            sum =  sum + i; // sum += i;
+        
+
+}
+        return sum; // 숫자1부터 매개변수  n으로 전달 받은 인수까지의 함이 저장된 sum변수값 반환
+
+}
+
+// sumUpto 함수 호출할때 인수 5를 매개 변수n으로 전달해서
+// 1 + 2 + 3 + 4 + 5 ->15를 구해 반환 받아 콘솔로그로 출력
+console.log(sumUpto(5));// 15;
+
+
+
+
+ </script>   
+</body>
+</html>

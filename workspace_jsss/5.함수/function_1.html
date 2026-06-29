@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*
+함수를 정의 하는 방법 (만드는 방법)
+        방법1. 함수 선언문 function 키워드로 함수 정의 및 매개변수 처리
+
+        function 함수명 (매개변수1, 매개변수2){
+        실행할 코드;
+        return 반환값;
+        }
+        함수명 (인수1, 인수2); <- 함수 호출구문
+
+        방법2. 함수 표현식 const 상수명 = function 키워드로 함수 정의 및 매개변수 처리
+
+        const 상수명 = function (매개변수1, 매개변수2){
+        
+            실행할 코드;
+            return 반환값;
+        
+        };
+        상수명(인수1,인수2); <- 함수 호출 구문
+
+        
+        방법3. 화살표 => 함수 정의 및 매개변수 처리
+
+        const 상수명 = (매개변수1, 매개변수2  ) => {
+        
+            실행할 코드;
+            return 반환값;
+                       
+        };
+        상수명(인수1,인수2); <- 함수 호출 구문
+
+
+*/
+/*
+함수를 정의 하는 방법 (만드는 방법)
+        방법1. 함수 선언문 function 키워드로 함수 정의 및 매개변수 처리
+
+*/
+        // 함수기능 : 매개변수로 전달 받은 2개의 숫자 값을 곱해서 반환하는 기능
+        function multiply(a,b){
+            console.log(`a: ${a}, b:${b}`);
+            return a * b;
+        }
+//---------------------------------------------------------------------------
+/*
+multiply (5,10); ->> 호출시 a매개변수에 5, b매개변수에 10을 전달해  
+console.log(`a: ${a}, b:${b}`); 
+               a: 5 , b: 10      
+                                return a * b; ->> return 5 * 10;
+                                return 50; multiply (5,10)에 50반환
+*/
+console.log(multiply (5,10));
+
+
+/*
+ multiply(7); 호출시 a매개변수에만 7을전달하고 b매개변수에는 값을 전달x undediend가 되어 
+ console.log(`a: ${a}, b:${b}`); ->> a = 7, b = undediend
+                                    return 7 * undediend ->> return NaN이 반환되어 출력
+*/
+console.log(multiply(7));//NaN;
+
+
+
+// multiply(  ); <- 호출시 a 와 b 매개변수는 모드 undediend가 되어 
+// console.log(`a: ${a}, b:${b}`); 출력값은  a:undediend b:undediend
+// 그리고 return a * b; 는  return undediend  * undediend ;이므로 NaN이 변환됩니다.
+
+console.log(multiply());//NaN;
+
+//-------------------------------------------------------------------------------
+//함수를 정의 하는 방법(만드는 방법) 방법3. 화살표로 함수 정의 및 매개변수 기본값 할당 처리
+//                                                                ㄴ>  x = 5 , y = 5
+const add = ( x = 5, y = 5 ) => {
+        
+        console.log(` x: ${x}, y:${y}`); // 실행할 코드 : 확인용
+        return x + y; //두 매개변수 합 결과 반환
+  //기본값 할당기능으로 매개변수에 값 미설정시에 나타나는 undediend를 방지할수있다.
+        
+    };
+    add(3,7);        //상수명(인수1,인수2); <- 함수 호출 구문
+    console.log(add(3,7)); // x=3,y=7  10;
+
+    //add();
+
+    //console.log(add()); -> 기본값 x=5,y=5 이므로 10;출력  
+
+
+    // add(3);
+
+    //console.log(add(3)); // x= 3 , y=5 기본할당값 5
+//------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>

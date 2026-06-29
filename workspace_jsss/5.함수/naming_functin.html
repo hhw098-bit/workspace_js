@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+/*
+함수를 정의하는 방법 (만드는 방법)
+
+
+방법2. 함수 표현식 const 상수명 = function 키워드로 함수 정의 및 매개변수 처리
+
+    네이밍함수
+    const 상수명 = function 함수명() {
+    실행할 코드;
+    };
+
+    이름이 없는 함수
+    const 상수명 = function() {
+    실행할 코드;
+    };
+        */
+// 실습1 함수표현식 작성 방법 네이밍함수형태 로 구구단 3단을 반복해서 출력하는 기능의 함수 정의
+const gugudan3 = function naming(){// naming이라는 이름이 존재하는 네이밍 함수 형태
+//구구단에서 곱하는 수만큼 3단출력
+for(let i=1; i<=9; i++){
+    console.log(`3*${i} = ${3*i}`);
+
+}
+
+};
+// 위 정의 해놓은 naming 함수 호출
+// 상수명 (  );
+gugudan3();
+console.log("++++++++++++++++++++++++++++++++++++++++=");
+
+// 실습2 함수 표현식 작성 방법 (익명함수형태)으로 구구단 4단을 반복해서 출력하는 기능의 함수 정의
+const gugudan4 = function (){//  이름이 존재하지않는 익명함수 형태
+//구구단에서 곱하는 수만큼 3단출력
+for(let i=1; i<=9; i++){
+    console.log(`4*${i} = ${4*i}`);
+}
+};
+//4단 출력하기 위해 gugudan4상수메모리에 저장된 익명함수 호출
+// 상수명( );
+ gugudan4( );
+
+/*
+함수 표현식으로 함수를 정의할떄는 const키워드를 주로 사용힙니다
+let키워드를 사용해도 문제 없지만 const키워드로 정의하는것이 좋습니다
+보통 함수는 일관된 목적을 가진 코드 집합이라서 코드를 수정하면 안되는 경우가 많기 때문입니다.
+???*/
+
+
+ </script>
+    
+
+</body>
+</html>

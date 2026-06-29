@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+
+
+<body>
+    
+<script>
+/*    
+num1이라는 변수메모리에 저장된 10을 1차감한뒤 9로 만들어 num1 변수에 다시 저장
+let num1 = 10;
+num1 = num1 - 1;
+  10 =  10 -  1;
+  10 =  9;
+  9
+
+  num1 = num1 - 1;보다 간결한 식은  num1 -= 1;
+*/
+
+let num1 = 10; let num2 = 20; let result; //계산한 결과값을 저장할 변수
+//num1변수에 저장된 10을 1감소 시킨 9를 다시 num1변수에 대입하여 저장.
+num1--; // num1 = num1 -1;   or   num1 -= 1;
+//변수명--; : 변수에 저장된 값을 1 감소 시킨후 그값을 다시 변수에 저장
+document.write(num1, "<br>");// 9 <br>
+//============num1 변수값은 9로 저장됨===============================
+//num1변수에서 저장된 9를 1증가시킨 10으로  다시 num1변수에 대압하여 저장
+num1++; // num1 = num1 +1; or num1= +=1;    변수값을 1증가시킨후 변수에 저장
+document.write(num1, "<br>"); // 10 <br>
+//============num2 = 20; 20이 저장됨================================
+     result = num2++;
+//  [     ] = [20]++;
+//   ++한다음 증가 연산자가 변수명 뒤에 작성했을때는 num2변수에 저장된 값을 먼저 사용한후 num2변수의 값을 나중에 1증가시킴
+// 먼저 변수 결과에 num2변수에 저장된 20을 저장한 후에 num2변수에 저장된 20을 1증가시켜 21로 다시저장
+document.write(result, "<br>"); //20;
+document.write(num2, "<br>"); //21;
+//result -> 20, num2 -> 21
+
+
+     result = ++num2;
+//    [20]  = ++[21];          ++증가 연산자가 변수명 앞에 있을때 먼저 num2변수에 저장된 21을 1증가 시킨 22로 만든후
+//    [20]  =   22;                 결과변수에 num2변수값 22를 대압하여 저장    
+//    [22]                       result -> 22 ,  num2 -> 22
+document.write(result , "&nbsp;&nbsp", num2);
+
+</script>
+
+
+
+
+
+</body>
+</html>

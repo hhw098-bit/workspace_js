@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //세개의 숫자 중 가장 큰수를 삼항조건연산자식으로 구하는 예
+        // 세개의 숫자를 각가 상수메모리를 만들어 저장
+        const num1 = 10; const num2 = 20; const num3 = 15;
+        //삼항조건연산자식을 사용하여 가장 큰수 찾기
+        //const max = 조건식       ?      조건식이 참일때 실행할 코드       :   조건식이 거짓일때 실행될 코드;
+        //       (num1 > num2)  ?      (num1 > num3 ? num1 : num3);  :  (num2 > num3 ? num2 : num3); 
+        //          10 > 20     ?           (30 > 15 ? 30: 15);             : (20 > 15 ? 20: 15);
+        //           false                     num1=30일때 true                false일때때
+
+        const max = (num1 > num2) ? (num1 > num3 ? num1 : num3) : (num2 > num3 ? num2 : num3);
+
+        console.log(max);//20;
+
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

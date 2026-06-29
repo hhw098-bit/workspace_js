@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //주제 : 산술연산자 중에서 나누기 연산자 
+        //                    나머지값 구하는 연산자 % 비교하기
+
+        let numberOne = 15 / 2; // numberOne변수에 저장되는 값은 7.5
+        // 결론 : 15를 2로 나누면 7.5가 나옵니다.
+        //       정수 15를 정수 2로 나누었을떄 소수점이하의 값이 발생합니다.
+        //        따라서, 15를 2로 나누면 7.5가 나오는 것은 정수와 정수의 나눗셈의 결과가   
+        //        소수점 이하를 포함할수 있기 때문입니다.
+
+        //  바디태그 사이에 출력하는 한문장이다 
+        //  document.write (출력할 값 또는 변수명) -웹브라우저에 결과값이 출력됨 /
+        document.write(numberOne, "<br>");
+
+        //15를 2로 나누었을떄 나머지값 구해  %  let numberOne 변수에 저장
+        let numberTwo = 15 % 2; // 나머지값 1
+        document.write(numberTwo, "<br>");
+
+        // -----------------를 바디태그안에 br태그 상태로 보내어 웹브라우저에 출력됨됨
+        document.write("---------------<br>");
+
+        let numberA = 1;
+        let numberB = 2;
+        //넘버a변수에 저장된 값과 넘버b변수에 저장된 값의 합을 출력한 후 한줄 줄바꿈 출력
+        document.write(numberA + numberB, "<br>"); //3<br>
+        //넘버a변수에 저장된 값에서 넘버b변수에 저장된 값을 뺀후 결과값 출력한 후 한줄 줄바꿈 출력
+        document.write(numberA - numberB, "<br>");
+        //                 1  -     2        <br>   
+        //                    -1             <br>
+
+        //넘버a변수에 저장된 값에서 넘버b변수에 저장된 값을 곱한 결과값 출력한 후 한줄 줄바꿈 출력
+        document.write(numberA * numberB, "<br>"); // 1*2= 2 <br>
+        //넘버a변수에 저장된 값을 넘버b변수에 저장된 값으로 나눈 나머지 결과값을 출력한 후 한줄 줄바꿈 출력
+        document.write(numberA % numberB, "<br>"); // 1%2= 1 <br>
+        //넘버a변수에 저장된 값을 넘버b변수에 저장된 값으로 나눈 몫을 구해 출력 후 한줄 줄바꿈 출력
+        document.write(numberA / numberB, "<br>"); // 1/2= 0.5 <br> 소수점까지 출력
+        //문자 기호 출력
+        document.write("---------------<br>");
+
+        let result4 = 1 + 2 * 10;
+        //2*10부터 계산 ->20, 1+20=21  21이 결과4변수 메모리에 저장
+        document.write(result4, "<br>"); //21 <br>
+
+        let result5 = (1 + 2) * 10;
+        //괄호식 부터 계산, 1+2=3,  3*10= 30  30이 결과5변수 메모리에 저장
+        document.write(result5, "<br>"); //30 <br>
+    </script>
+
+
+</head>
+
+
+
+
+
+<body>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let a = 10; let b = 20; let c = 10; let f = "20"; let result;
+    //a변수에 저장된 값이 b변수에 저장된 값보다 더 크냐? 조건식 작성하기
+
+    // 조건식의 결과값을 결과변수에 저장
+    result = (a > b);
+    //결과변수에 저장된 최종 값  console.log로 출력
+    console.log(result); //false
+    //a변수에 저장된 값이 b변수에 저장된 값보다 더 작냐? 조건식 작성후
+
+    //조건의 결과값을 결과변수에 저장
+    result = (a < b);
+    //결과변수에 저장된 최종값 console.log로 출력
+    console.log(result); //true
+
+    //b변수에 저장된 값20이 f변수에 저장된 "20의 숫자형태만 같으냐 조건식 작성후 
+    // 조건식의 결과값을 결과변수에 저장
+    result = b == f;  //20 == "20";   , true
+    // 결과변수에 저장된 최종값 console.log로 출력
+    console.log(result);
+    //a변수에 저장된 값 10이 b변수에 저장된 값 20의 숫자형태만 다르냐 조건식 작성루
+    // 조건식의 결과값을 결과 변수에 저장
+    result = a != b;
+
+    // 결과변수에 저장된 최종값 console.log로 출력
+    console.log(result);
+    //b변수에 저장된 값 20이 f변수에 저장된 값 "20"의 숫자형태 그리고 자료형 모두 같으냐 작성후
+    // 조건식의 결과값을 결과 변수에 저장
+    result = b === f;
+    //결과변수에 저장된 최종값 consol.log로 출력력
+    console.log(result);
+
+    //b변수에 저장된 값 20이 f변수에 저장된 값 "20"의 숫자형태 그리고 자료형 모두 다르냐 작성후
+    // 조건식의 결과값을 결과 변수에 저장
+    result = b !== f; //20 !== "20" true  true
+    //결과변수에 저장된 최종값 consol.log로 출력력
+    console.log(result); // true
+  </script>
+
+</body>
+
+</html>
