@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+/* 
+고대 마야문명 느낌을 내는 패턴과 색을 조합한 진수 변환 계산기
+*/
+body {
+    font-family: 'Segoe UI', '맑은 고딕', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ecf6f2 0%, #e5dbc4 100%);
+}
+
+h2 {
+    font-family: 'Papyrus', '맑은 고딕', fantasy, serif;
+    text-align: center;
+    color: #5A4636;
+    letter-spacing: 2px;
+    margin-top: 36px;
+    text-shadow: 0 2px 6px #e4cb7daa, 0 1px 0px #b1a179bb;
+}
+
+div[style*="max-width: 400px"] {
+    border: 4px solid #ad875f;
+    background-image:
+        repeating-linear-gradient(
+            135deg, 
+            #e6c17a33 0px, 
+            #e6c17a33 14px, 
+            #cbae7f22 15px, 
+            #cbae7f22 30px
+        ),
+        url('https://cdn.pixabay.com/photo/2018/11/04/00/57/maya-3791297_960_720.png');
+    background-blend-mode: lighten;
+    background-size: 80px, cover;
+    background-repeat: repeat, no-repeat;
+    background-position: left bottom, center;
+    box-shadow: 0 2px 12px #cfb37566, 0 0px 0 #fff;
+    border-radius: 18px 48px 18px 48px/24px 40px 24px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+label, select, input[type="text"], button, strong {
+    font-family: 'Papyrus', '맑은 고딕', fantasy, serif;
+}
+
+input[type="text"], select {
+    background: #faedde;
+    border: 1.5px solid #ad875f;
+    color: #5A4636;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+}
+
+input[type="text"]:focus, select:focus {
+    outline: 2px solid #ceb054;
+}
+
+button {
+    background: linear-gradient(90deg,#d9b06a 50%,#b88639 100%);
+    color: #40301D;
+    border: 2px solid #ad875f;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 2px;
+    box-shadow: 1px 2px 6px #e2ca9896;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+button:hover {
+    background: linear-gradient(90deg, #b88639 10%, #e8cd8f 90%);
+}
+
+#errorMsg {
+    font-family: 'Papyrus', '맑은 고딕', fantasy, serif;
+    color: #b33d1a !important;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px #fcf3ab88;
+}
+
+hr {
+    border: none;
+    border-top: 3px double #ad875f;
+    margin: 18px 0;
+}
+
+strong {
+    color: #b27e25;
+}
+
+#output2, #output10, #output12, #output16 {
+    font-family: 'Consolas', 'Courier New', 'Papyrus', fantasy, monospace;
+    background: #f4dcbbbb;
+    color: #7e6f31;
+    padding: 2px 10px 2px 8px;
+    margin: 1px 0 6px 0;
+    border-radius: 5px 16px 5px 16px;
+    border: 1px solid #ceb05477;
+    display: inline-block;
+    min-width: 60px;
+    text-align: left;
+}
+
+
+    
+</style>
+
+<body>
+<h2>진수 변환 계산기</h2>
+<div style="max-width: 400px; border: 1px solid #ccc; border-radius: 12px; padding: 20px; margin: 24px auto; background: #f7fafb; box-shadow: 0 2px 12px #d6dbe0;">
+    <label for="numberInput"><strong>값 입력:</strong></label>
+    <input type="text" id="numberInput" placeholder="숫자를 입력하세요" style="width: 70%; padding: 6px 8px; margin-bottom: 8px; border-radius: 5px; border: 1px solid #bfc3c9;">
+    <select id="baseInput" style="padding: 6px; border-radius: 6px; border: 1px solid #bfc3c9;">
+        <option value="2">2진수</option>
+        <option value="10" selected>10진수</option>
+        <option value="12">12진수</option>
+        <option value="16">16진수</option>
+    </select>
+    <button onclick="convertBases()" style="padding: 6px 16px; margin-left: 8px; background: #3651e7; color: #fff; border-radius: 5px; border: none;">변환</button>
+    <div id="errorMsg" style="color: red; margin-top: 8px; min-height: 22px;"></div>
+    <hr>
+    <div>
+        <strong>2진수:</strong> <span id="output2">-</span><br>
+        <strong>10진수:</strong> <span id="output10">-</span><br>
+        <strong>12진수:</strong> <span id="output12">-</span><br>
+        <strong>16진수:</strong> <span id="output16">-</span>
+    </div>
+</div>
+<script>
+    function convertBases() {
+        const input = document.getElementById("numberInput").value.trim();
+        const base = parseInt(document.getElementById("baseInput").value, 10);
+        const errorMsg = document.getElementById("errorMsg");
+        let num;
+        errorMsg.textContent = "";
+        document.getElementById("output2").textContent = "-";
+        document.getElementById("output10").textContent = "-";
+        document.getElementById("output12").textContent = "-";
+        document.getElementById("output16").textContent = "-";
+
+        if (!input) {
+            errorMsg.textContent = "값을 입력하세요.";
+            return;
+        }
+        // 유효성 검사
+        let valid = false;
+        if (base === 2) {
+            valid = /^[01]+$/.test(input);
+        } else if (base === 10) {
+            valid = /^-?\d+$/.test(input);
+        } else if (base === 12) {
+            // 0-9, A, B, a, b 허용 (12진수)
+            valid = /^[0-9aAbB]+$/.test(input);
+        } else if (base === 16) {
+            valid = /^[0-9a-fA-F]+$/.test(input);
+        }
+
+        if (!valid) {
+            errorMsg.textContent = `${base}진수 입력값이 올바르지 않습니다.`;
+            return;
+        }
+
+        // 입력값을 10진수 숫자로 변환
+        try {
+            num = parseInt(input, base);
+            if (isNaN(num)) throw "invalid";
+        } catch (e) {
+            errorMsg.textContent = `변환에 실패했습니다.`;
+            return;
+        }
+
+        // 각 결과 진법으로 변환하여 출력
+        document.getElementById("output2").textContent = num.toString(2).toUpperCase();
+        document.getElementById("output10").textContent = num.toString(10).toUpperCase();
+        // 12진수는 JS에서 지원, 10~11은 A, B로 표기
+        document.getElementById("output12").textContent = num.toString(12).toUpperCase();
+        document.getElementById("output16").textContent = num.toString(16).toUpperCase();
+    }
+
+    // 엔터키로 변환되도록
+    document.getElementById("numberInput").addEventListener("keyup", function(e){
+        if(e.key === "Enter") convertBases();
+    });
+</script>
+</body>
+</html>
